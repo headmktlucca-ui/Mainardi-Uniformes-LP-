@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Menu, X, Phone, ShoppingBag, Sparkles } from 'lucide-react';
-import { ASSETS, COMPANY_INFO } from '../data/mockData';
+import { Menu, X, ArrowRight } from 'lucide-react';
+import { ASSETS } from '../data/mockData';
 
 interface HeaderProps {
   onOpenKitBuilder: () => void;
@@ -80,11 +80,13 @@ export const Header: React.FC<HeaderProps> = ({ onOpenKitBuilder, onOpenQuoteMod
           <div className="hidden lg:flex items-center space-x-4" id="header-actions">
             <button
               onClick={onOpenQuoteModal}
-              className="bg-[#2D2A26] hover:bg-[#1A1816] text-[#E5A823] hover:text-amber-300 font-extrabold text-sm sm:text-base px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 tracking-wider uppercase border border-amber-500/30 flex items-center gap-2"
+              className="group relative inline-flex items-center justify-between gap-3 bg-gradient-to-r from-[#E5A823] via-yellow-400 to-[#E5A823] bg-[length:200%_auto] hover:bg-[position:right_center] text-neutral-950 font-black text-xs sm:text-sm px-6 py-3 rounded-full shadow-lg shadow-amber-500/20 hover:shadow-xl hover:shadow-amber-500/35 transition-all duration-300 transform hover:-translate-y-0.5 uppercase tracking-wider cursor-pointer border border-amber-300/50 active:scale-95"
               id="btn-solicitar-orcamento"
             >
-              <Phone className="w-4 h-4 text-amber-400" />
-              SOLICITAR ORÇAMENTO
+              <span>SOLICITAR ORÇAMENTO</span>
+              <span className="w-6 h-6 rounded-full bg-neutral-950/10 flex items-center justify-center group-hover:bg-neutral-950 group-hover:text-[#E5A823] transition-all duration-300 transform group-hover:translate-x-0.5">
+                <ArrowRight className="w-3.5 h-3.5" />
+              </span>
             </button>
           </div>
 
@@ -92,10 +94,11 @@ export const Header: React.FC<HeaderProps> = ({ onOpenKitBuilder, onOpenQuoteMod
           <div className="flex md:hidden items-center gap-2" id="mobile-menu-wrapper">
             <button
               onClick={onOpenQuoteModal}
-              className="bg-[#2D2A26] text-[#E5A823] font-extrabold text-xs px-3 py-2 rounded-full border border-amber-500/30"
+              className="bg-[#E5A823] hover:bg-amber-400 text-neutral-950 font-black text-xs px-4 py-2.5 rounded-full shadow-md transition-all uppercase tracking-wider flex items-center gap-1.5 cursor-pointer"
               id="mobile-quick-quote-btn"
             >
-              ORÇAMENTO
+              <span>ORÇAMENTO</span>
+              <ArrowRight className="w-3.5 h-3.5" />
             </button>
 
             <button
@@ -155,10 +158,11 @@ export const Header: React.FC<HeaderProps> = ({ onOpenKitBuilder, onOpenQuoteMod
                 setMobileMenuOpen(false);
                 onOpenQuoteModal();
               }}
-              className="w-full bg-[#2D2A26] text-[#E5A823] font-black text-center py-3 rounded-full shadow tracking-wider uppercase text-sm border border-amber-500/30"
+              className="w-full bg-[#E5A823] hover:bg-amber-400 text-neutral-950 font-black text-center py-3.5 rounded-full shadow-lg transition-all transform hover:-translate-y-0.5 uppercase tracking-wider text-xs sm:text-sm flex items-center justify-center gap-2.5 cursor-pointer"
               id="mobile-drawer-btn-orcamento"
             >
-              SOLICITAR ORÇAMENTO AGORA
+              <span>SOLICITAR ORÇAMENTO AGORA</span>
+              <ArrowRight className="w-4 h-4" />
             </button>
           </div>
         </div>

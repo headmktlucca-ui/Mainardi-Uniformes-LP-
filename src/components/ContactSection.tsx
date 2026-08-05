@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MapPin, Phone, Mail, Clock, Send, MessageSquare, CheckCircle, Sparkles } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Send, MessageSquare, CheckCircle, Sparkles, ArrowRight } from 'lucide-react';
 import { COMPANY_INFO } from '../data/mockData';
 import { ContactFormData } from '../types';
 
@@ -262,11 +262,11 @@ ${formData.message}`;
                 {/* Submit button (Matching reference design style) */}
                 <button
                   type="submit"
-                  className="w-full bg-[#2D2A26] hover:bg-neutral-900 text-[#E5A823] font-black text-base py-4 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2 uppercase tracking-wider border border-amber-500/30 cursor-pointer"
+                  className="w-full bg-[#E5A823] hover:bg-amber-400 text-neutral-950 font-black text-xs sm:text-sm py-4 rounded-full shadow-2xl hover:shadow-amber-500/20 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2.5 uppercase tracking-wider cursor-pointer"
                   id="btn-enviar-contato"
                 >
-                  <Send className="w-5 h-5" />
-                  <span>ENVIAR SOLICITAÇÃO</span>
+                  <span>ENVIAR SOLICITAÇÃO DE ORÇAMENTO</span>
+                  <ArrowRight className="w-4 h-4" />
                 </button>
 
               </form>
