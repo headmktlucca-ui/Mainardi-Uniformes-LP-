@@ -22,8 +22,8 @@ export const Hero: React.FC<HeroProps> = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/20 to-transparent z-10 pointer-events-none"></div>
       </div>
 
-      {/* Main Content Area - Aligned to Left */}
-      <div className="relative z-20 w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 py-10 lg:py-16" id="hero-text-container">
+      {/* Main Content Area - 100% Full Width */}
+      <div className="relative z-20 w-full px-4 sm:px-8 lg:px-12 py-10 lg:py-16" id="hero-text-container">
         <div className="max-w-lg space-y-5 text-left">
           
           {/* Top Badge: Hexagon Logo Badge + Qualidade que Veste Campeões */}
