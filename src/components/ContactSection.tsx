@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { MapPin, Phone, Mail, Clock, Send, MessageSquare, CheckCircle, Sparkles, ArrowRight } from 'lucide-react';
+import { CheckCircle, ArrowRight } from 'lucide-react';
 import { COMPANY_INFO } from '../data/mockData';
 import { ContactFormData } from '../types';
+import influen01Img from '../assets/images/Influen01.png';
 
 export const ContactSection: React.FC = () => {
   const [formData, setFormData] = useState<ContactFormData>({
@@ -50,99 +51,9 @@ ${formData.message}`;
           <div className="w-20 h-1.5 bg-[#E5A823] rounded-full mt-2"></div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
-          {/* Left Column: Contact Details & Map (Matching reference design layout) */}
-          <div className="lg:col-span-6 space-y-6" id="contato-info-container">
-            
-            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-neutral-200 shadow-lg space-y-6">
-              
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center shrink-0 mt-1">
-                  <MapPin className="w-5 h-5" />
-                </div>
-                <div>
-                  <h4 className="font-extrabold text-neutral-900 text-sm uppercase tracking-wider">Endereço:</h4>
-                  <p className="text-neutral-700 font-bold text-sm sm:text-base">
-                    {COMPANY_INFO.address}
-                  </p>
-                  <p className="text-neutral-600 text-sm">
-                    {COMPANY_INFO.zip} / {COMPANY_INFO.city}
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4 border-t border-neutral-100 pt-4">
-                <div className="w-10 h-10 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center shrink-0 mt-1">
-                  <Phone className="w-5 h-5" />
-                </div>
-                <div>
-                  <h4 className="font-extrabold text-neutral-900 text-sm uppercase tracking-wider">Telefone / WhatsApp:</h4>
-                  <a
-                    href={`https://wa.me/55${COMPANY_INFO.phone}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-amber-700 hover:text-amber-800 font-extrabold text-lg block hover:underline"
-                  >
-                    {COMPANY_INFO.phoneFormatted}
-                  </a>
-                  <p className="text-neutral-500 text-xs">Atendimento rápido pelo WhatsApp</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4 border-t border-neutral-100 pt-4">
-                <div className="w-10 h-10 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center shrink-0 mt-1">
-                  <Mail className="w-5 h-5" />
-                </div>
-                <div>
-                  <h4 className="font-extrabold text-neutral-900 text-sm uppercase tracking-wider">E-mail:</h4>
-                  <a
-                    href={`mailto:${COMPANY_INFO.email}`}
-                    className="text-neutral-800 hover:text-amber-700 font-bold text-sm sm:text-base hover:underline"
-                  >
-                    {COMPANY_INFO.email}
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4 border-t border-neutral-100 pt-4">
-                <div className="w-10 h-10 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center shrink-0 mt-1">
-                  <Clock className="w-5 h-5" />
-                </div>
-                <div>
-                  <h4 className="font-extrabold text-neutral-900 text-sm uppercase tracking-wider">Horário de Atendimento:</h4>
-                  <p className="text-neutral-700 text-sm font-medium">
-                    {COMPANY_INFO.workingHours}
-                  </p>
-                </div>
-              </div>
-
-            </div>
-
-            {/* Map Preview Container */}
-            <div className="bg-white rounded-3xl p-3 border border-neutral-200 shadow-md overflow-hidden relative" id="map-container">
-              <div className="aspect-[16/7] rounded-2xl overflow-hidden relative bg-neutral-200">
-                <iframe
-                  title="Gráfica Mainardi Location Map"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3478.847192384!2d-53.030587!3d-29.423012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjknMjUnMjIuOCJTIDUzwrAwMSc1MC4xIlc!5e0!3m2!1spt-BR!2sbr!4v1650000000000!5m2!1spt-BR!2sbr"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen={false}
-                  loading="lazy"
-                  className="filter grayscale contrast-125 opacity-90"
-                ></iframe>
-
-                <div className="absolute top-3 left-3 bg-neutral-950/90 text-white p-2.5 rounded-xl border border-amber-500/30 flex items-center gap-2 text-xs font-extrabold shadow-lg">
-                  <MapPin className="w-4 h-4 text-amber-400" />
-                  <span>Sobradinho - RS</span>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          {/* Right Column: Contact Form (Matching reference design input layout) */}
+          {/* Left Column: Contact Form */}
           <div className="lg:col-span-6 bg-white rounded-3xl p-6 sm:p-8 border border-neutral-200 shadow-xl space-y-6" id="contato-form-container">
             
             <div className="border-b border-neutral-100 pb-4">
@@ -259,7 +170,7 @@ ${formData.message}`;
                   ></textarea>
                 </div>
 
-                {/* Submit button (Matching reference design style) */}
+                {/* Submit button */}
                 <button
                   type="submit"
                   className="w-full bg-[#E5A823] hover:bg-emerald-600 text-neutral-950 hover:text-white font-black text-xs sm:text-sm py-4 rounded-lg shadow-2xl hover:shadow-emerald-600/30 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2.5 tracking-wide cursor-pointer"
@@ -272,6 +183,16 @@ ${formData.message}`;
               </form>
             )}
 
+          </div>
+
+          {/* Right Column: Image Influen01.png */}
+          <div className="lg:col-span-6 flex justify-center items-center" id="contato-image-container">
+            <img
+              src={influen01Img}
+              alt="Atendimento Gráfica Mainardi"
+              className="w-full h-auto object-contain max-h-[600px] rounded-3xl"
+              referrerPolicy="no-referrer"
+            />
           </div>
 
         </div>

@@ -69,14 +69,14 @@ export default function App() {
           onOpenKitBuilder={handleOpenQuote}
         />
 
-        {/* Section: FLUXO DE PROCESSO */}
-        <FlowSection />
-
         {/* Section 2: MODELOS DE FUTEBOL */}
         <CatalogSection
           onSelectModel={() => handleOpenQuote()}
           onOpenKitBuilder={handleOpenQuote}
         />
+
+        {/* Section: FLUXO DE PROCESSO */}
+        <FlowSection />
 
         {/* Section 5: Entre em contato */}
         <ContactSection />
