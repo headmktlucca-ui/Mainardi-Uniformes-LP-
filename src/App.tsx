@@ -9,6 +9,7 @@ import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { ImageModal } from './components/ImageModal';
 import { QuoteModal } from './components/QuoteModal';
+import { WhatsAppWidget } from './components/WhatsAppWidget';
 
 export default function App() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
@@ -104,6 +105,9 @@ export default function App() {
         isOpen={quoteModalOpen}
         onClose={() => setQuoteModalOpen(false)}
       />
+
+      {/* Floating WhatsApp Widget */}
+      <WhatsAppWidget />
 
     </div>
   );

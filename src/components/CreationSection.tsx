@@ -1,65 +1,118 @@
 import React from 'react';
 import { Shirt, Trophy, Monitor, Printer } from 'lucide-react';
+import fundoModelagem from '../assets/images/Fd_Modelagem.png';
+import fundoPadraoCampeao from '../assets/images/Fd_Padrao_Campeao.png';
+import fundoLayouts from '../assets/images/Fd_Layouts.png';
+import fundoSublimacao from '../assets/images/Fd_Sublimacao.png';
 
 interface CreationSectionProps {
-  onSelectImage: (src: string, title: string, caption: string) => void;
-  onOpenKitBuilder: () => void;
+  onSelectImage?: (src: string, title: string, caption: string) => void;
+  onOpenKitBuilder?: () => void;
 }
 
-export const CreationSection: React.FC<CreationSectionProps> = () => {
+const features = [
+  {
+    id: 'feature-1',
+    icon: Shirt,
+    title: 'Modelagem Exclusiva',
+    subtitle: 'Corte Raglan ou Tradicional',
+    description: 'Modelagem ergonômica com ótimo caimento e acabamento reforçado no corpo.',
+    image: fundoModelagem,
+    tag: 'Corte Premium',
+  },
+  {
+    id: 'feature-2',
+    icon: Trophy,
+    title: 'Padrão Campeão',
+    subtitle: 'Alta Performance',
+    description: 'Qualidade profissional testada e aprovada por times e influenciadores.',
+    image: fundoPadraoCampeao,
+    tag: 'Design Profissional',
+  },
+  {
+    id: 'feature-3',
+    icon: Monitor,
+    title: 'Layouts Ilimitados',
+    subtitle: '100% Customizável',
+    description: 'Liberdade total para escudos, patrocinadores, números e combinação de cores.',
+    image: fundoLayouts,
+    tag: 'Arte Exclusiva',
+  },
+  {
+    id: 'feature-4',
+    icon: Printer,
+    title: 'Sublimação Total',
+    subtitle: 'Alta Definição',
+    description: 'Impressão digital vibrante 720x1440 DPI em Dry-Fit que jamais desbota.',
+    image: fundoSublimacao,
+    tag: 'Tecnologia HD',
+  },
+];
+
+export const CreationSection: React.FC<CreationSectionProps> = ({ onSelectImage }) => {
   return (
-    <section className="py-16 bg-white text-neutral-900 border-b border-neutral-200" id="criacao">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-16 sm:py-20 bg-slate-50 text-neutral-900 border-b border-neutral-200 relative overflow-hidden" id="criacao">
+      {/* Subtle Background Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-500/10 blur-[120px] pointer-events-none rounded-full" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center space-y-3 mb-12">
+        <div className="text-center space-y-3 mb-12 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-neutral-900" id="criacao-title">
-            CRIAÇÃO
+            CRIAÇÃO <span className="text-amber-600">SEM LIMITES</span>
           </h2>
           <p className="text-base sm:text-lg lg:text-xl font-medium text-neutral-600 max-w-2xl mx-auto" id="criacao-subtitle">
-            Todos os modelos disponíveis podem ser modificados conforme você desejar!!
+            Todos os modelos disponíveis podem ser totalmente modificados conforme o seu projeto!
           </p>
           <div className="w-20 h-1.5 bg-[#E5A823] mx-auto rounded-full mt-2"></div>
         </div>
 
-        {/* 4 Feature Process Icons (Matching reference layout) */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8" id="criacao-features-grid">
-          
-          <div className="flex flex-col items-center text-center p-6 bg-neutral-50 rounded-2xl border border-neutral-200 hover:border-amber-400 hover:shadow-lg transition-all group">
-            <div className="w-16 h-16 rounded-2xl bg-amber-100 flex items-center justify-center text-[#E5A823] group-hover:bg-[#E5A823] group-hover:text-neutral-950 transition-colors mb-4">
-              <Shirt className="w-8 h-8" />
-            </div>
-            <h3 className="font-extrabold text-neutral-900 text-lg mb-1">Modelagem Exclusiva</h3>
-            <p className="text-xs sm:text-sm text-neutral-600 font-medium">Corte Raglan ou Tradicional com ótimo caimento no corpo.</p>
-          </div>
+        {/* 4 Feature Cards Grid with Uniform Previews */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8" id="criacao-features-grid">
+          {features.map((item) => {
+            const IconComponent = item.icon;
+            return (
+              <div
+                key={item.id}
+                onClick={() => onSelectImage && onSelectImage(item.image, item.title, item.description)}
+                className="group relative rounded-2xl overflow-hidden bg-white border border-neutral-200 shadow-md hover:shadow-xl hover:border-amber-400 transition-all duration-300 flex flex-col cursor-pointer transform hover:-translate-y-1"
+              >
+                {/* Image Background Showcase Header */}
+                <div className="relative h-56 sm:h-60 w-full overflow-hidden bg-neutral-100">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
+                    referrerPolicy="no-referrer"
+                  />
+                  {/* Gradient Overlay for Readability into White Body */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-black/10" />
 
-          <div className="flex flex-col items-center text-center p-6 bg-neutral-50 rounded-2xl border border-neutral-200 hover:border-amber-400 hover:shadow-lg transition-all group">
-            <div className="w-16 h-16 rounded-2xl bg-amber-100 flex items-center justify-center text-[#E5A823] group-hover:bg-[#E5A823] group-hover:text-neutral-950 transition-colors mb-4">
-              <Trophy className="w-8 h-8" />
-            </div>
-            <h3 className="font-extrabold text-neutral-900 text-lg mb-1">Padrão Campeão</h3>
-            <p className="text-xs sm:text-sm text-neutral-600 font-medium">Qualidade profissional aprovada por times e influenciadores.</p>
-          </div>
 
-          <div className="flex flex-col items-center text-center p-6 bg-neutral-50 rounded-2xl border border-neutral-200 hover:border-amber-400 hover:shadow-lg transition-all group">
-            <div className="w-16 h-16 rounded-2xl bg-amber-100 flex items-center justify-center text-[#E5A823] group-hover:bg-[#E5A823] group-hover:text-neutral-950 transition-colors mb-4">
-              <Monitor className="w-8 h-8" />
-            </div>
-            <h3 className="font-extrabold text-neutral-900 text-lg mb-1">Layouts Ilimitados</h3>
-            <p className="text-xs sm:text-sm text-neutral-600 font-medium">Cores, patrocínios, escudos e nomes totalmente livres.</p>
-          </div>
+                </div>
 
-          <div className="flex flex-col items-center text-center p-6 bg-neutral-50 rounded-2xl border border-neutral-200 hover:border-amber-400 hover:shadow-lg transition-all group">
-            <div className="w-16 h-16 rounded-2xl bg-amber-100 flex items-center justify-center text-[#E5A823] group-hover:bg-[#E5A823] group-hover:text-neutral-950 transition-colors mb-4">
-              <Printer className="w-8 h-8" />
-            </div>
-            <h3 className="font-extrabold text-neutral-900 text-lg mb-1">Sublimação Total</h3>
-            <p className="text-xs sm:text-sm text-neutral-600 font-medium">Impressão digital 720x1440 DPI que jamais desbota.</p>
-          </div>
-
+                {/* Card Content Footer */}
+                <div className="p-5 flex-1 flex flex-col justify-between space-y-3 bg-white">
+                  <div>
+                    <h3 className="font-black text-neutral-900 text-lg group-hover:text-amber-600 transition-colors flex items-center justify-between">
+                      <span>{item.title}</span>
+                    </h3>
+                    <p className="text-xs font-bold text-amber-600 uppercase tracking-wide mt-0.5 mb-2">
+                      {item.subtitle}
+                    </p>
+                    <p className="text-xs sm:text-sm text-neutral-600 font-medium leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
 
       </div>
     </section>
   );
 };
+

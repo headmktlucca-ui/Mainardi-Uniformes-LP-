@@ -262,10 +262,10 @@ ${formData.message}`;
                 {/* Submit button (Matching reference design style) */}
                 <button
                   type="submit"
-                  className="w-full bg-[#E5A823] hover:bg-amber-400 text-neutral-950 font-black text-xs sm:text-sm py-4 rounded-full shadow-2xl hover:shadow-amber-500/20 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2.5 uppercase tracking-wider cursor-pointer"
+                  className="w-full bg-[#E5A823] hover:bg-emerald-600 text-neutral-950 hover:text-white font-black text-xs sm:text-sm py-4 rounded-lg shadow-2xl hover:shadow-emerald-600/30 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2.5 tracking-wide cursor-pointer"
                   id="btn-enviar-contato"
                 >
-                  <span>ENVIAR SOLICITAÇÃO DE ORÇAMENTO</span>
+                  <span>Enviar Solicitação de Orçamento</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
 

@@ -61,9 +61,9 @@ export const ImageModal: React.FC<ImageModalProps> = ({
 
           <button
             onClick={handleWhatsApp}
-            className="w-full sm:w-auto bg-[#E5A823] hover:bg-amber-400 text-neutral-950 font-black text-xs sm:text-sm px-6 py-3 rounded-full transition-all flex items-center justify-center gap-2 uppercase tracking-wide shrink-0"
+            className="w-full sm:w-auto bg-[#E5A823] hover:bg-emerald-600 text-neutral-950 hover:text-white font-black text-xs sm:text-sm px-6 py-3 rounded-lg transition-all flex items-center justify-center gap-2 tracking-wide shrink-0 cursor-pointer"
           >
-            <Send className="w-4 h-4 fill-neutral-950" />
+            <Send className="w-4 h-4 fill-current" />
             <span>Quero Este Modelo no WhatsApp</span>
           </button>
         </div>

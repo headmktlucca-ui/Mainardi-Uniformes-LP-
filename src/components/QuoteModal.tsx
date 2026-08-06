@@ -117,7 +117,7 @@ Gostaria de ver os modelos e valores para fechamento!`;
 
           <button
             type="submit"
-            className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-black text-base py-4 rounded-full shadow-xl transition-all flex items-center justify-center gap-2 uppercase tracking-wide cursor-pointer mt-2"
+            className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-black text-base py-4 rounded-lg shadow-xl transition-all flex items-center justify-center gap-2 tracking-wide cursor-pointer mt-2"
           >
             <Send className="w-5 h-5 fill-white" />
             <span>Falar no WhatsApp Agora</span>

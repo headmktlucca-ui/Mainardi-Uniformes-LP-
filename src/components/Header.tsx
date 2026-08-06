@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import { ASSETS } from '../data/mockData';
+import ShinyButton from './ui/shiny-button';
 
 interface HeaderProps {
   onOpenKitBuilder: () => void;
@@ -78,26 +79,22 @@ export const Header: React.FC<HeaderProps> = ({ onOpenKitBuilder, onOpenQuoteMod
 
           {/* Action Button */}
           <div className="hidden lg:flex items-center space-x-4" id="header-actions">
-            <button
+            <ShinyButton
               onClick={onOpenQuoteModal}
-              className="group relative inline-flex items-center justify-between gap-3 bg-gradient-to-r from-[#E5A823] via-yellow-400 to-[#E5A823] bg-[length:200%_auto] hover:bg-[position:right_center] text-neutral-950 font-black text-xs sm:text-sm px-6 py-3 rounded-full shadow-lg shadow-amber-500/20 hover:shadow-xl hover:shadow-amber-500/35 transition-all duration-300 transform hover:-translate-y-0.5 uppercase tracking-wider cursor-pointer border border-amber-300/50 active:scale-95"
               id="btn-solicitar-orcamento"
             >
-              <span>SOLICITAR ORÇAMENTO</span>
-              <span className="w-6 h-6 rounded-full bg-neutral-950/10 flex items-center justify-center group-hover:bg-neutral-950 group-hover:text-[#E5A823] transition-all duration-300 transform group-hover:translate-x-0.5">
-                <ArrowRight className="w-3.5 h-3.5" />
-              </span>
-            </button>
+              Solicitar Orçamento
+            </ShinyButton>
           </div>
 
           {/* Mobile menu button */}
           <div className="flex md:hidden items-center gap-2" id="mobile-menu-wrapper">
             <button
               onClick={onOpenQuoteModal}
-              className="bg-[#E5A823] hover:bg-amber-400 text-neutral-950 font-black text-xs px-4 py-2.5 rounded-full shadow-md transition-all uppercase tracking-wider flex items-center gap-1.5 cursor-pointer"
+              className="bg-[#E5A823] hover:bg-emerald-600 text-neutral-950 hover:text-white font-black text-xs px-4 py-2.5 rounded-lg shadow-md hover:shadow-emerald-600/30 transition-all tracking-wide flex items-center gap-1.5 cursor-pointer"
               id="mobile-quick-quote-btn"
             >
-              <span>ORÇAMENTO</span>
+              <span>Solicitar Orçamento</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </button>
 
@@ -153,17 +150,16 @@ export const Header: React.FC<HeaderProps> = ({ onOpenKitBuilder, onOpenQuoteMod
             Entre em Contato
           </button>
           <div className="pt-2">
-            <button
+            <ShinyButton
               onClick={() => {
                 setMobileMenuOpen(false);
                 onOpenQuoteModal();
               }}
-              className="w-full bg-[#E5A823] hover:bg-amber-400 text-neutral-950 font-black text-center py-3.5 rounded-full shadow-lg transition-all transform hover:-translate-y-0.5 uppercase tracking-wider text-xs sm:text-sm flex items-center justify-center gap-2.5 cursor-pointer"
               id="mobile-drawer-btn-orcamento"
+              className="w-full"
             >
-              <span>SOLICITAR ORÇAMENTO AGORA</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
+              Solicitar Orçamento Agora
+            </ShinyButton>
           </div>
         </div>
       )}

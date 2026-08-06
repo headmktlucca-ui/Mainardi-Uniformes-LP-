@@ -78,9 +78,9 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({ onSelectModel, o
               <div className="p-5 pt-0">
                 <button
                   onClick={onOpenKitBuilder}
-                  className="w-full bg-[#E5A823] hover:bg-amber-400 text-neutral-950 font-black text-xs py-3 rounded-xl transition-all flex items-center justify-center gap-1.5 uppercase tracking-wider"
+                  className="w-full bg-[#E5A823] hover:bg-emerald-600 text-neutral-950 hover:text-white font-black text-xs py-3 rounded-lg transition-all flex items-center justify-center gap-1.5 tracking-wide cursor-pointer"
                 >
-                  <span>PERSONALIZAR</span>
+                  <span>Personalizar</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </div>

@@ -1,37 +1,60 @@
-import React from 'react';
-import { ArrowRight, Hexagon } from 'lucide-react';
-import fundoCapaImg from '../assets/images/Fundo Capa.png';
+import React, { useState, useEffect } from 'react';
+import { ArrowRight } from 'lucide-react';
+import fundoCapa01 from '../assets/images/Fundo Capa 01.png';
+import fundoCapa02 from '../assets/images/Fundo Capa02.png';
+import fundoCapa03 from '../assets/images/Fundo Capa03.png';
+import fundoCapa04 from '../assets/images/Fundo Capa04.png';
+import medalhaImg from '../assets/images/medalha.png';
+import ShinyButton from './ui/shiny-button';
 
 interface HeroProps {
   onScrollToBuilder: () => void;
   onOpenQuoteModal: () => void;
 }
 
+const carouselImages = [fundoCapa01, fundoCapa02, fundoCapa03, fundoCapa04];
+
 export const Hero: React.FC<HeroProps> = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % carouselImages.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className="relative bg-[#18181B] text-white overflow-hidden w-full min-h-[500px] sm:min-h-[560px] md:min-h-[620px] lg:min-h-[680px] flex items-center" id="inicio">
-      {/* Background Image & Soft Left-to-Right Overlay */}
+      {/* Background Image Carousel & Soft Left-to-Right Overlay */}
       <div className="absolute inset-0 z-0">
-        <img
-          src={fundoCapaImg}
-          alt="Uniformes Esportivos Gráfica Mainardi"
-          className="w-full h-full object-cover object-center"
-          referrerPolicy="no-referrer"
-          id="hero-bg-img"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/20 to-transparent z-10 pointer-events-none"></div>
+        {carouselImages.map((imgSrc, idx) => (
+          <img
+            key={idx}
+            src={imgSrc}
+            alt={`Uniformes Esportivos Gráfica Mainardi - ${idx + 1}`}
+            className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ease-in-out ${
+              idx === currentIndex ? 'opacity-100' : 'opacity-0'
+            }`}
+            referrerPolicy="no-referrer"
+            id={idx === 0 ? "hero-bg-img" : `hero-bg-img-${idx}`}
+          />
+        ))}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/10 sm:from-black/85 sm:via-black/50 sm:to-transparent z-10 pointer-events-none"></div>
       </div>
 
       {/* Main Content Area - 100% Full Width */}
       <div className="relative z-20 w-full px-4 sm:px-8 lg:px-12 py-10 lg:py-16" id="hero-text-container">
-        <div className="max-w-lg space-y-5 text-left">
+        <div className="max-w-2xl space-y-5 text-left">
           
-          {/* Top Badge: Hexagon Logo Badge + Qualidade que Veste Campeões */}
+          {/* Top Badge: Medalha Image + Qualidade que Veste Campeões */}
           <div className="flex items-center gap-3">
-            <div className="relative flex items-center justify-center text-[#E5A823] shrink-0">
-              <Hexagon className="w-10 h-10 stroke-[#E5A823] stroke-[2.5] fill-black/30" />
-              <span className="absolute font-black text-xs text-[#E5A823]">M</span>
-            </div>
+            <img
+              src={medalhaImg}
+              alt="Medalha"
+              className="w-10 h-10 object-contain shrink-0"
+              referrerPolicy="no-referrer"
+            />
             <div className="text-left leading-tight uppercase font-black tracking-wide">
               <span className="block text-[11px] sm:text-xs text-neutral-200">
                 QUALIDADE QUE
@@ -44,7 +67,7 @@ export const Hero: React.FC<HeroProps> = () => {
 
           {/* Headline */}
           <div className="space-y-0">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-white uppercase leading-none" id="hero-title-line1">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black tracking-tight text-white uppercase leading-none whitespace-nowrap" id="hero-title-line1">
               VISTA SEU TIME COM
             </h1>
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-[#E5A823] uppercase leading-none" id="hero-title-line2">
@@ -60,19 +83,17 @@ export const Hero: React.FC<HeroProps> = () => {
 
           {/* CTA Button */}
           <div className="pt-3" id="hero-cta-buttons">
-            <button
+            <ShinyButton
               onClick={() => {
                 const element = document.getElementById('catalog-section');
                 if (element) {
                   element.scrollIntoView({ behavior: 'smooth' });
                 }
               }}
-              className="bg-[#E5A823] hover:bg-amber-400 text-neutral-950 font-black text-xs sm:text-sm px-7 py-3.5 rounded-full shadow-2xl hover:shadow-amber-500/30 transition-all transform hover:-translate-y-0.5 uppercase tracking-wider flex items-center gap-2.5 cursor-pointer"
               id="hero-btn-solicitar-contato"
             >
-              <span>CONHEÇA NOSSOS MODELOS</span>
-              <ArrowRight className="w-4 h-4 stroke-[3]" />
-            </button>
+              Conheça Nossos Modelos
+            </ShinyButton>
           </div>
 
         </div>
