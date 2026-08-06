@@ -46,7 +46,7 @@ ${formData.message}`;
         {/* Title */}
         <div className="mb-12">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-neutral-900" id="contato-title">
-            Entre em contato
+            Entre em <span className="text-[#D96B00]">contato</span>
           </h2>
           <div className="w-20 h-1.5 bg-[#E5A823] rounded-full mt-2"></div>
         </div>
