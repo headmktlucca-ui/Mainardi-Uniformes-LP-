@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import WhatsAppIcon from './WhatsAppIcon';
 
 interface SubtleButtonProps {
   onClick?: () => void;
@@ -40,8 +41,9 @@ export default function SubtleButton({
 
       {/* Text */}
       <span className="text-neutral-950 font-black tracking-wide text-xs sm:text-sm uppercase transition-colors duration-300 
-                       group-hover:text-white relative z-10">
-        {text}
+                       group-hover:text-white relative z-10 flex items-center gap-2">
+        <WhatsAppIcon className="w-4 h-4 fill-current shrink-0" />
+        <span>{text}</span>
       </span>
 
       {/* Animated dot */}

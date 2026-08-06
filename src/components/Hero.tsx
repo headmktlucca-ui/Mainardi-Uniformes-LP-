@@ -4,6 +4,7 @@ import fundoCapa01 from '../assets/images/Fundo Capa 01.png';
 import fundoCapa02 from '../assets/images/Fundo Capa02.png';
 import fundoCapa03 from '../assets/images/Fundo Capa03.png';
 import fundoCapa04 from '../assets/images/Fundo Capa04.png';
+import fundoCapa05 from '../assets/images/Fundo Capa05.jpeg';
 import medalhaImg from '../assets/images/medalha.png';
 import ShinyButton from './ui/shiny-button';
 
@@ -12,7 +13,7 @@ interface HeroProps {
   onOpenQuoteModal: () => void;
 }
 
-const carouselImages = [fundoCapa01, fundoCapa02, fundoCapa03, fundoCapa04];
+const carouselImages = [fundoCapa01, fundoCapa02, fundoCapa03, fundoCapa04, fundoCapa05];
 
 export const Hero: React.FC<HeroProps> = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -48,18 +49,18 @@ export const Hero: React.FC<HeroProps> = () => {
         <div className="max-w-2xl space-y-5 text-left">
           
           {/* Top Badge: Medalha Image + Qualidade que Veste Campeões */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-5 sm:gap-6">
             <img
               src={medalhaImg}
               alt="Medalha"
-              className="w-10 h-10 object-contain shrink-0"
+              className="h-24 sm:h-28 w-auto object-contain shrink-0"
               referrerPolicy="no-referrer"
             />
-            <div className="text-left leading-tight uppercase font-black tracking-wide">
-              <span className="block text-[11px] sm:text-xs text-neutral-200">
+            <div className="text-left leading-snug uppercase font-black tracking-wide">
+              <span className="block text-xl sm:text-2xl text-neutral-200">
                 QUALIDADE QUE
               </span>
-              <span className="block text-[13px] sm:text-sm text-white">
+              <span className="block text-2xl sm:text-3xl text-white">
                 VESTE CAMPEÕES
               </span>
             </div>
@@ -91,6 +92,7 @@ export const Hero: React.FC<HeroProps> = () => {
                 }
               }}
               id="hero-btn-solicitar-contato"
+              showIcon={false}
             >
               Conheça Nossos Modelos
             </ShinyButton>

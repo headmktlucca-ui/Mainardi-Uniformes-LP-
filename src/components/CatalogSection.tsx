@@ -12,21 +12,19 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({ onSelectModel, o
   const [activeCategory, setActiveCategory] = useState<string>('todos');
 
   return (
-    <section className="py-16 bg-white text-neutral-900 border-b border-neutral-200" id="catalog-section">
+    <section className="py-16 bg-white text-neutral-900 border-b border-neutral-200" id="modelos">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>
-            <span className="text-[#E5A823] text-xs font-black uppercase tracking-widest block mb-1">
-              Gráfica Mainardi • Linha Futebol
-            </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase text-neutral-900 tracking-tight" id="catalog-title">
-              MODELOS DE FUTEBOL
+              UNIFORMES <span className="text-amber-600">PERSONALIZADOS</span>
             </h2>
-            <p className="text-neutral-600 text-base sm:text-lg max-w-xl mt-2" id="catalog-subtitle">
+            <p className="text-base sm:text-lg lg:text-xl font-medium text-neutral-600 max-w-xl mt-2" id="catalog-subtitle">
               Confira os layouts mais procurados para times de futebol de campo, futsal e society.
             </p>
+            <div className="w-20 h-1.5 bg-[#E5A823] rounded-full mt-2"></div>
           </div>
         </div>
 

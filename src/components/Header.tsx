@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import { ASSETS } from '../data/mockData';
 import ShinyButton from './ui/shiny-button';
+import WhatsAppIcon from './ui/WhatsAppIcon';
 
 interface HeaderProps {
   onOpenKitBuilder: () => void;
@@ -40,33 +41,18 @@ export const Header: React.FC<HeaderProps> = ({ onOpenKitBuilder, onOpenQuoteMod
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8 text-neutral-800 font-semibold text-base" id="desktop-nav">
             <button
-              onClick={() => scrollToSection('inicio')}
-              className="hover:text-amber-600 transition-colors py-2 relative group focus:outline-none"
-              id="nav-inicio"
-            >
-              Início
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-500 transition-all duration-300 group-hover:w-full"></span>
-            </button>
-            <button
               onClick={() => scrollToSection('criacao')}
               className="hover:text-amber-600 transition-colors py-2 relative group focus:outline-none"
               id="nav-criacao"
             >
-              Criação
+              Características
             </button>
             <button
-              onClick={() => scrollToSection('descricao')}
+              onClick={() => scrollToSection('modelos')}
               className="hover:text-amber-600 transition-colors py-2 relative group focus:outline-none"
               id="nav-modelos"
             >
-              Modelos
-            </button>
-            <button
-              onClick={() => scrollToSection('tecnologia')}
-              className="hover:text-amber-600 transition-colors py-2 relative group focus:outline-none"
-              id="nav-tecnologia"
-            >
-              Tecnologia
+              Personalizados
             </button>
             <button
               onClick={() => scrollToSection('contato')}
@@ -91,11 +77,11 @@ export const Header: React.FC<HeaderProps> = ({ onOpenKitBuilder, onOpenQuoteMod
           <div className="flex md:hidden items-center gap-2" id="mobile-menu-wrapper">
             <button
               onClick={onOpenQuoteModal}
-              className="bg-[#E5A823] hover:bg-emerald-600 text-neutral-950 hover:text-white font-black text-xs px-4 py-2.5 rounded-lg shadow-md hover:shadow-emerald-600/30 transition-all tracking-wide flex items-center gap-1.5 cursor-pointer"
+              className="bg-[#E5A823] hover:bg-emerald-600 text-neutral-950 hover:text-white font-black text-xs px-3.5 py-2.5 rounded-lg shadow-md hover:shadow-emerald-600/30 transition-all tracking-wide flex items-center gap-1.5 cursor-pointer"
               id="mobile-quick-quote-btn"
             >
+              <WhatsAppIcon className="w-4 h-4 fill-current shrink-0" />
               <span>Solicitar Orçamento</span>
-              <ArrowRight className="w-3.5 h-3.5" />
             </button>
 
             <button
@@ -115,32 +101,18 @@ export const Header: React.FC<HeaderProps> = ({ onOpenKitBuilder, onOpenQuoteMod
       {mobileMenuOpen && (
         <div className="md:hidden bg-white border-b border-neutral-200 px-4 pt-2 pb-6 space-y-3 shadow-xl animate-fadeIn" id="mobile-dropdown">
           <button
-            onClick={() => scrollToSection('inicio')}
-            className="block w-full text-left px-3 py-2 text-base font-semibold text-neutral-800 hover:bg-amber-50 hover:text-amber-600 rounded-md"
-            id="mobile-nav-inicio"
-          >
-            Início
-          </button>
-          <button
             onClick={() => scrollToSection('criacao')}
             className="block w-full text-left px-3 py-2 text-base font-semibold text-neutral-800 hover:bg-amber-50 hover:text-amber-600 rounded-md"
             id="mobile-nav-criacao"
           >
-            Criação
+            Características
           </button>
           <button
-            onClick={() => scrollToSection('descricao')}
+            onClick={() => scrollToSection('modelos')}
             className="block w-full text-left px-3 py-2 text-base font-semibold text-neutral-800 hover:bg-amber-50 hover:text-amber-600 rounded-md"
             id="mobile-nav-modelos"
           >
-            Modelos & Descrição
-          </button>
-          <button
-            onClick={() => scrollToSection('tecnologia')}
-            className="block w-full text-left px-3 py-2 text-base font-semibold text-neutral-800 hover:bg-amber-50 hover:text-amber-600 rounded-md"
-            id="mobile-nav-tecnologia"
-          >
-            Tecnologia (Estampa & Costura)
+            Personalizados
           </button>
           <button
             onClick={() => scrollToSection('contato')}

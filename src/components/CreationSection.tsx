@@ -58,14 +58,14 @@ export const CreationSection: React.FC<CreationSectionProps> = ({ onSelectImage 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center space-y-3 mb-12 sm:mb-16">
+        <div className="text-left space-y-3 mb-12 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-neutral-900" id="criacao-title">
             CRIAÇÃO <span className="text-amber-600">SEM LIMITES</span>
           </h2>
-          <p className="text-base sm:text-lg lg:text-xl font-medium text-neutral-600 max-w-2xl mx-auto" id="criacao-subtitle">
+          <p className="text-base sm:text-lg lg:text-xl font-medium text-neutral-600 max-w-2xl" id="criacao-subtitle">
             Todos os modelos disponíveis podem ser totalmente modificados conforme o seu projeto!
           </p>
-          <div className="w-20 h-1.5 bg-[#E5A823] mx-auto rounded-full mt-2"></div>
+          <div className="w-20 h-1.5 bg-[#E5A823] rounded-full mt-2"></div>
         </div>
 
         {/* 4 Feature Cards Grid with Uniform Previews */}
@@ -75,19 +75,17 @@ export const CreationSection: React.FC<CreationSectionProps> = ({ onSelectImage 
             return (
               <div
                 key={item.id}
-                onClick={() => onSelectImage && onSelectImage(item.image, item.title, item.description)}
-                className="group relative rounded-2xl overflow-hidden bg-white border border-neutral-200 shadow-md hover:shadow-xl hover:border-amber-400 transition-all duration-300 flex flex-col cursor-pointer transform hover:-translate-y-1"
+                className="group relative rounded-2xl overflow-hidden bg-white border border-neutral-200 shadow-md flex flex-col"
               >
                 {/* Image Background Showcase Header */}
                 <div className="relative h-56 sm:h-60 w-full overflow-hidden bg-neutral-100">
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
+                    className="w-full h-full object-cover object-top"
                     referrerPolicy="no-referrer"
                   />
-                  {/* Gradient Overlay for Readability into White Body */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-black/10" />
+                  {/* Image without white gradient overlay */}
 
 
                 </div>
@@ -95,7 +93,7 @@ export const CreationSection: React.FC<CreationSectionProps> = ({ onSelectImage 
                 {/* Card Content Footer */}
                 <div className="p-5 flex-1 flex flex-col justify-between space-y-3 bg-white">
                   <div>
-                    <h3 className="font-black text-neutral-900 text-lg group-hover:text-amber-600 transition-colors flex items-center justify-between">
+                    <h3 className="font-black text-neutral-900 text-lg flex items-center justify-between">
                       <span>{item.title}</span>
                     </h3>
                     <p className="text-xs font-bold text-amber-600 uppercase tracking-wide mt-0.5 mb-2">

@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { CreationSection } from './components/CreationSection';
-import { DescriptionSection } from './components/DescriptionSection';
-import { TechnologySection } from './components/TechnologySection';
+import { FlowSection } from './components/FlowSection';
 import { CatalogSection } from './components/CatalogSection';
+import { TeamIdentitySection } from './components/TeamIdentitySection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { ImageModal } from './components/ImageModal';
@@ -60,24 +60,19 @@ export default function App() {
           onOpenQuoteModal={() => setQuoteModalOpen(true)}
         />
 
+        {/* Section: IDENTIDADE DO SEU TIME */}
+        <TeamIdentitySection onOpenQuote={handleOpenQuote} />
+
         {/* Section 1: CRIAÇÃO */}
         <CreationSection
           onSelectImage={handleOpenImageModal}
           onOpenKitBuilder={handleOpenQuote}
         />
 
-        {/* Section 2: DESCRIÇÃO */}
-        <DescriptionSection
-          onSelectImage={handleOpenImageModal}
-          onOpenKitBuilder={handleOpenQuote}
-        />
+        {/* Section: FLUXO DE PROCESSO */}
+        <FlowSection />
 
-        {/* Section 3: ESTAMPA & CONFECÇÃO */}
-        <TechnologySection
-          onSelectImage={handleOpenImageModal}
-        />
-
-        {/* Section 4: MODELOS DE FUTEBOL */}
+        {/* Section 2: MODELOS DE FUTEBOL */}
         <CatalogSection
           onSelectModel={() => handleOpenQuote()}
           onOpenKitBuilder={handleOpenQuote}

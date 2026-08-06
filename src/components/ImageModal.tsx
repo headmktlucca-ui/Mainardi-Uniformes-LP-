@@ -1,6 +1,7 @@
 import React from 'react';
-import { X, Sparkles, Send } from 'lucide-react';
+import { X, Sparkles } from 'lucide-react';
 import { COMPANY_INFO } from '../data/mockData';
+import WhatsAppIcon from './ui/WhatsAppIcon';
 
 interface ImageModalProps {
   isOpen: boolean;
@@ -63,8 +64,8 @@ export const ImageModal: React.FC<ImageModalProps> = ({
             onClick={handleWhatsApp}
             className="w-full sm:w-auto bg-[#E5A823] hover:bg-emerald-600 text-neutral-950 hover:text-white font-black text-xs sm:text-sm px-6 py-3 rounded-lg transition-all flex items-center justify-center gap-2 tracking-wide shrink-0 cursor-pointer"
           >
-            <Send className="w-4 h-4 fill-current" />
-            <span>Quero Este Modelo no WhatsApp</span>
+            <WhatsAppIcon className="w-4 h-4 fill-current shrink-0" />
+            <span>SOLICITAR ORÇAMENTO</span>
           </button>
         </div>
 
