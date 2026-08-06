@@ -45,7 +45,7 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({ onSelectModel, o
                     referrerPolicy="no-referrer"
                   />
                   {model.badge && (
-                    <span className="absolute top-3 left-3 bg-[#E5A823] text-neutral-950 font-black text-[10px] px-2.5 py-1 rounded-full uppercase shadow-md">
+                    <span className="absolute top-3 left-3 bg-emerald-600 text-white font-black text-[10px] px-2.5 py-1 rounded-full uppercase shadow-md">
                       {model.badge}
                     </span>
                   )}
@@ -76,10 +76,10 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({ onSelectModel, o
               <div className="p-5 pt-0">
                 <button
                   onClick={onOpenKitBuilder}
-                  className="w-full bg-[#E5A823] hover:bg-emerald-600 text-neutral-950 hover:text-white font-black text-xs py-3 rounded-lg transition-all flex items-center justify-center gap-1.5 tracking-wide cursor-pointer"
+                  className="group w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#FFB800] via-[#F59E0B] to-[#ED8936] hover:from-emerald-600 hover:via-emerald-600 hover:to-emerald-700 text-neutral-950 hover:text-white font-black uppercase text-xs tracking-wider px-4 py-3 rounded-2xl border-2 border-[#D97300] hover:border-emerald-600 shadow-[0_4px_14px_rgba(217,115,0,0.35)] hover:shadow-[0_6px_20px_rgba(5,150,105,0.4)] transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
                 >
-                  <span>Personalizar</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <span>SOLICITAR ORÇAMENTO</span>
+                  <ArrowRight className="w-4 h-4 text-neutral-950 group-hover:text-white transition-colors duration-300" />
                 </button>
               </div>
 

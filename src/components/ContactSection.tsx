@@ -173,11 +173,11 @@ ${formData.message}`;
                 {/* Submit button */}
                 <button
                   type="submit"
-                  className="w-full bg-[#E5A823] hover:bg-emerald-600 text-neutral-950 hover:text-white font-black text-xs sm:text-sm py-4 rounded-lg shadow-2xl hover:shadow-emerald-600/30 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2.5 tracking-wide cursor-pointer"
+                  className="group w-full inline-flex items-center justify-center gap-3 bg-gradient-to-r from-[#FFB800] via-[#F59E0B] to-[#ED8936] hover:from-emerald-600 hover:via-emerald-600 hover:to-emerald-700 text-neutral-950 hover:text-white font-black uppercase text-sm sm:text-base tracking-wider px-8 py-3.5 rounded-full border-2 border-[#D97300] hover:border-emerald-600 shadow-[0_4px_14px_rgba(217,115,0,0.35)] hover:shadow-[0_6px_20px_rgba(5,150,105,0.4)] transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
                   id="btn-enviar-contato"
                 >
-                  <span>Enviar Solicitação de Orçamento</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <span>SOLICITAR ORÇAMENTO</span>
+                  <ArrowRight className="w-5 h-5 text-neutral-950 group-hover:text-white transition-colors duration-300" />
                 </button>
 
               </form>
